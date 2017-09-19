@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+    <title>Chalk</title>
+    <meta charset="utf-8"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <link rel="stylesheet" href="index.css"/>
 </head>
@@ -8,11 +10,14 @@
     <div id="topmenu">
         <div class="button material-icons" id="lm_btn">menu</div>
         <div id="left_btns">
-            <div class="button notif material-icons">notifications</div>
+            <div class="button material-icons" id="ac_btn">person</div>
+            <div class="button notif material-icons" id="nf_btn">notifications</div>
         </div>
         <div id="search"><input type="text"/></div>
     </div>
     <div id="leftmenu"></div>
+    <div id="notifmenu" class="rightmenu"></div>
+    <div id="accountmenu" class="rightmenu"></div>
     <script src="lib-verbose.js"></script>
     <script src="index.js"></script>
 </body>
