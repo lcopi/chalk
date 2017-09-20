@@ -5,6 +5,11 @@ body, html {
     padding:0;
     font-size:0px;
     background-color:rgba(0,0,0, 0.15);
+    box-sizing:border-box;
+}
+body {
+    padding-top:48px;
+    display:table;
 }
 
 #topmenu {
@@ -147,7 +152,7 @@ body, html {
 }
 #leftmenu {
     height:calc(100% - 48px);
-    width:400px;
+    width:450px;
     display:none;
     position:fixed;
     top:48px;
@@ -177,3 +182,160 @@ body, html {
 .rightmenu.open {
     display:block;
 }
+
+#content {
+    height:calc(100% - 48px);
+    width:100%;
+    font-size:0px;
+    display:block;
+    position:absolute;
+}
+#leftcolumn {
+    height:100%;
+    width:400px;
+    display:inline-block;
+    box-sizing:border-box;
+    vertical-align:top;
+    position:relative;
+    background:linear-gradient(65deg, #1E88E5, #64B5F6);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.cal_picker_row {
+    height:50%;
+    width:100%;
+    display:block;
+    vertical-align:top;
+    font-size:0px;
+    position:relative;
+}
+#cal_picker_dow {
+    height:36px;
+    width:100%;
+    display:block;
+    position:absolute;
+    box-sizing:border-box;
+    top:0;
+    left:0;
+    background-color:rgba(0,0,0, 0.1);
+    color:#fff;
+    font:normal 16px/24px "Roboto", sans-serif;
+    text-align:center;
+    padding:6px;
+}
+#cal_picker_mnth,
+#cal_picker_year {
+    height:48px;
+    width:100%;
+    display:block;
+    position:absolute;
+    box-sizing:border-box;
+    color:#fff;
+    font:normal 24px/36px "Roboto", sans-serif;
+    text-align:center;
+    padding:6px;
+    left:0;
+    top:calc(50% - 120px);
+}
+#cal_picker_year {
+    top:unset;
+    bottom:calc(50% - 120px);
+}
+#cal_picker_day {
+    height:136px;
+    width:100%;
+    display:block;
+    position:absolute;
+    box-sizing:border-box;
+    color:#fff;
+    font:normal 108px/136px "Roboto", sans-serif;
+    text-align:center;
+    padding:0;
+    left:0;
+    top:calc(50% - 72px);
+}
+#cal_picker_my_rot {
+    height:48px;
+    width:100%;
+    display:block;
+    box-sizing:border-box;
+    position:absolute;
+    top:0;
+    left:0;
+    font-size:0px;
+}
+#cal_picker_grid {
+    height:calc(100% - 96px);
+    width:100%;
+    box-sizing:border-box;
+    position:absolute;
+    top:48px;
+    left:0;
+    background-color:rgba(255,255,255, 0.85);
+    table-layout:fixed;
+}
+#cal_picker_grid th {
+    height:24px;
+    vertical-align:middle;
+    text-align:center;
+    font:normal 12px/24px "Roboto", sans-serif;
+    color:#000;
+}
+#cal_picker_grid td {
+    text-align:center;
+    vertical-align:middle;
+    height:calc((100% - 24px) / 7);
+    width:calc(100% / 7);
+}
+#cal_picker_grid .cal_picker_g_btn {
+    height:36px;
+    width:36px;
+    display:inline-block;
+    box-sizing:border-box;
+    padding:6px;
+    font:normal 14px/24px "Roboto", sans-serif;
+    color:rgba(0,0,0, 0.8);
+    border-radius:50%;
+    cursor:pointer;
+}
+#cal_picker_grid .cal_picker_g_btn:hover {
+    background-color:rgba(0,0,0, 0.1);
+}
+#cal_picker_grid .cal_picker_g_btn.selec {
+    background-color:#2196F3;
+    color:#fff;
+}
+#cal_picker_my_rot .button {
+    height:36px;
+    width:36px;
+    box-sizing:border-box;
+    display:inline-block;
+    padding:6px;
+    margin:6px;
+    font:normal 24px/24px "Material Icons";
+    text-align:center;
+    color:#fff;
+    cursor:pointer;
+    border-radius:18px;
+    position:relative;
+    background-color:inherit;
+    vertical-align:top;
+}
+#cal_picker_my_rot .button:hover {
+    background-color:rgba(255,255,255, 0.5);
+}
+#cal_picker_my_rot #cal_picker_rot_disp,
+#cal_picker_my_rot #cal_picker_rot_year {
+    height:36px;
+    width:304px;
+    box-sizing:border-box;
+    display:inline-block;
+    padding:6px;
+    margin:6px 0px;
+    font:normal 14px/24px "Roboto", sans-serif;
+    text-align:center;
+    color:#fff;
+    vertical-align:top;
+}
+
+
