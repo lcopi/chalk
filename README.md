@@ -2,7 +2,7 @@
 
 Mockup for pages: https://mockflow.com/app/#Wireframe
 
-#Steps for building and running project locally
+# Steps for building and running project locally
 In the top directory of the project to build
 the docker container for the project
 ```
