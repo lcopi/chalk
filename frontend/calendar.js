@@ -43,13 +43,16 @@ Calendar.prototype = {
         var offset = this.months[this.current.Month].first(this.current.Year);
         var mlen   = this.months[this.current.Month].len(this.current.Year);
         var total_rows = Math.ceil((mlen + offset) / 7);
-        console.log(total_rows);
-        var current_row = _("<tr>").appendTo(this.elements.table);
+        /*  To increase Performance DocumentFragments should be used,
+            however that feature is not supported on all major browsers so
+            in the interest of cross-browser stability it is not used  */
+        var current_row = _("<tr>");
         for (i = 0; i < this.week.length; i++) {
             current_row.append(_("<th>").text(this.week[i].sabbr));
         }
+        current_row.appendTo(this.elements.table);
         for (i = 0; i < total_rows; i++) {
-            current_row = _("<tr>").appendTo(this.elements.table);
+            current_row = _("<tr>");
             for (j = 0; j < 7; j++) {
                 var cell = _("<td>").css({"height":"calc((100% - 24px) / " + total_rows.toString() + ")"});
                 var dayn = (i * 7) + j + 1 - offset;
@@ -61,6 +64,7 @@ Calendar.prototype = {
                 }
                 cell.appendTo(current_row);
             }
+            current_row.appendTo(this.elements.table);
         }
     },
     "setDate": function (year, month, date) {
