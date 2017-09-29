@@ -2,19 +2,47 @@ _(".button").on("click", function () {
     if(_(this).hasClass("selec")) {
         _(".button.selec").dropClass("selec");
         _(".rightmenu, #leftmenu").dropClass("open");
+        switch (this.id) {
+        case "lm_btn":
+            _(this).html("menu");
+            break;
+        case "nf_btn":
+            _(this).html("notifications");
+            _("#search, #ac_btn").css({"display":"inline-block"});
+            _("#left_btns").css({"right":"382px"});
+            break;
+        case "ac_btn":
+            _(this).html("person");
+            _("#search, #nf_btn").css({"display":"inline-block"});
+            _("#left_btns").css({"right":"382px"});
+            break;
+        }
     } else {
         _(".button.selec").dropClass("selec");
         _(".rightmenu, #leftmenu").dropClass("open");
         _(this).addClass("selec");
         switch (this.id) {
         case "lm_btn":
+            _(this).html("arrow_back");
             _("#leftmenu").addClass("open");
+            _("#search, #nf_btn, #ac_btn").css({"display":"inline-block"});
+            _("#left_btns").css({"right":"382px"});
+            _("#ac_btn").html("person");
+            _("#nf_btn").html("notifications");
             break;
         case "nf_btn":
+            _(this).html("arrow_forward");
             _("#notifmenu").addClass("open");
+            _("#search, #ac_btn").css({"display":"none"});
+            _("#left_btns").css({"right":"0"});
+            _("#lm_btn").html("menu");
             break;
         case "ac_btn":
+            _(this).html("arrow_forward");
             _("#accountmenu").addClass("open");
+            _("#search, #nf_btn").css({"display":"none"});
+            _("#left_btns").css({"right":"0"});
+            _("#lm_btn").html("menu");
             break;
         }
     }

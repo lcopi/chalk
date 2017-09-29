@@ -21,7 +21,7 @@ body {
     top:0px;
     left:0px;
     background-color:#ffffff;
-    border-bottom:0.5px solid rgba(0,0,0, 0.25);
+    border-bottom:0.5px solid rgba(0,0,0, 0.45);
     z-index:100;
 }
 
@@ -112,7 +112,7 @@ body {
     border-radius:50%;
     border:1px solid rgba(0,0,0, 0.25);
 }
-#topmenu .button.selec::before {
+/*#topmenu .button.selec::before {
     content:"";
     height:25px;
     width:14px;
@@ -122,10 +122,10 @@ body {
     left:-14.5px;
     border-radius:0px 0px 12px 0px;
     border-style: none solid solid none;
-    border-color:rgba(0,0,0, 0.45); /* rgba(0,0,0, 0.1) */
+    border-color:rgba(0,0,0, 0.45); 
     border-width:0.5px;
     background-color:#fff;
-    box-shadow:0 6px 0 #E6E6E6, 6px 0 0 #E6E6E6, 6px 6px 0 #E6E6E6; /* rgba(0,0,0, 0.1) */
+    box-shadow:0 6px 0 #E6E6E6, 6px 0 0 #E6E6E6, 6px 6px 0 #E6E6E6; 
 }
 #topmenu .button.selec::after {
     content:"";
@@ -137,18 +137,70 @@ body {
     right:-14.5px;
     border-radius:0px 0px 0px 12px;
     border-style: none none solid solid;
-    border-color:rgba(0,0,0, 0.45); /* rgba(0,0,0, 0.1) */
+    border-color:rgba(0,0,0, 0.45); 
     border-width:0.5px;
     background-color:#fff;
-    box-shadow:0 6px 0 #E6E6E6, -6px 0 0 #E6E6E6, -6px 6px 0 #E6E6E6; /* rgba(0,0,0, 0.1) */
+    box-shadow:0 6px 0 #E6E6E6, -6px 0 0 #E6E6E6, -6px 6px 0 #E6E6E6; 
 
 }
-#topmenu .button.selec {
-    box-shadow:0 12px 0 #E6E6E6;
-    background-color:#E6E6E6;
-    border:0.5px solid rgba(0,0,0, 0.45);
-    border-bottom:0.5px solid #E6E6E6;
+*/
+#topmenu #lm_btn.selec::after {
+    content:"Main Menu";
+    height:48px;
+    width:450px;
+    position:absolute;
+    top:-6px;
+    left:-6px;
+    background-color:#FFFFFF;
+    border-style:none solid solid none;
+    border-width:0.5px;
+    border-color:rgba(0,0,0, 0.45);
+    z-index:-2;
+    box-sizing:border-box;
+    padding:6px 6px 6px 54px;
+    font:normal 16px/36px "Roboto", sans-serif;
+    color:rgba(0,0,0, 0.75);
+    text-align:left;
+}
+#topmenu #nf_btn.selec::after,
+#topmenu #ac_btn.selec::after {
+    content:"Notifications";
+    height:48px;
+    width:450px;
+    display:block;
+    box-sizing:border-box;
+    position:absolute;
+    top:-6px;
+    right:-6px;
+    background-color:#FFFFFF;
+    border-radius:0;
+    border-style:none none solid solid;
+    border-width:0.5px;
+    border-color:rgba(0,0,0, 0.45);
+    padding:6px 54px 6px 6px;
+    font:normal 16px/36px "Roboto", sans-serif;
+    color:rgba(0,0,0, 0.75);
+    text-align:right;
+    z-index:-2;
+}
+#topmenu #ac_btn.selec::after {
+    content:"Account Menu";
+}
 
+
+#topmenu .button.selec {
+    background-color:#E6E6E6;
+}
+#topmenu .button.selec:hover::before {
+    content:"";
+    height:36px;
+    width:36px;
+    border-radius:50%;
+    background-color:#E6E6E6;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
 }
 #leftmenu {
     height:calc(100% - 48px);
@@ -158,25 +210,27 @@ body {
     top:48px;
     left:0px;
     background-color:#E6E6E6;
-    border-radius:0 12px 0 0;
-    border-style:solid solid none none;
+    border-radius:0;
+    border-style:none solid none none;
     border-width:0.5px;
     border-color:rgba(0,0,0, 0.45);
     z-index:99;
+    box-sizing:border-box;
 }
 .rightmenu {
     height:calc(100% - 48px);
-    width:600px;
+    width:450px;
     display:none;
     position:fixed;
     top:48px;
     right:0px;
     background-color:#E6E6E6;
-    border-radius:12px 0px 0 0;
-    border-style:solid none none solid;
+    border-radius:0;
+    border-style:none none none solid;
     border-width:0.5px;
     border-color:rgba(0,0,0, 0.45);
     z-index:99;
+    box-sizing:border-box;
 }
 #leftmenu.open,
 .rightmenu.open {
