@@ -247,7 +247,7 @@ body {
 #leftcolumn,
 #rightcolumn {
     height:100%;
-    width:400px;
+    width:400.5px;
     display:inline-block;
     box-sizing:border-box;
     vertical-align:top;
@@ -256,8 +256,11 @@ body {
     background-repeat:no-repeat;
     background-size:cover;
 }
+#leftcolumn {
+    border-right:0.5px solid rgba(0,0,0, 0.45);
+}
 #rightcolumn {
-	width:calc(100% - 400px);
+	width:calc(100% - 400.5px);
 	background:none;
 }
 .cal_picker_row {
@@ -403,7 +406,7 @@ body {
 	position:relative;
 	padding:64px 12px 12px 12px;
 	margin:0;
-	background-color:#FFFFFF;
+	background-color:#ECEFF1;
 	box-sizing:border-box;
 	vertical-align:top;
 	font-size:0;
@@ -417,9 +420,11 @@ body {
 	position:absolute;
 	top:8px;
 	left:12px;
-	background-color:#ECEFF1;
+	background-color:#CFD8DC;
 	border-radius:6px;
-	padding:6px;
+    padding:6px;
+    border-bottom:0.5px solid rgba(0,0,0, 0.25);
+    border-right:0.5px solid rgba(0,0,0, 0.25);
 }
 
 #gantt_content {
