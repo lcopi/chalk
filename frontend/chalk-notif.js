@@ -28,7 +28,7 @@ Chalk.Notifications = {
         this.actions.no = btn;
     },
     "TEXT": function () {
-        let btn = _("<input.chalk-notif-action-txtin>").appendTo(this.actions_el);
+        let btn = _("<input.chalk-notif-action-txtin>").appendTo(this.actions_el).attr("placeholder", "Enter Response Here");
         this.actions.txtin = btn;
     },
     "SEND": function () {
