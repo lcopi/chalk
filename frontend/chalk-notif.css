@@ -1,0 +1,115 @@
+.chalk-notif-group {
+    height:auto;
+    width:100%;
+    display:block;
+    box-sizing:border-box;
+    background-color:inherit;
+    padding:36px 6px 6px 6px;
+}
+.chalk-notif-group:nth-child(2n-1) {
+    background-color:#f5F5F5;
+}
+
+.chalk-notif-item {
+    height:240px;
+    width:calc(100% - 24px);
+    display:block;
+    box-sizing:border-box;
+    position:relative;
+    padding:48px 0;
+    margin:12px 12px 0px 12px;
+    background-color:#FFFFFF;
+    border-radius:6px;
+    overflow:hidden;
+    transition:left 0.5s ease;
+}
+.chalk-notif-item .chalk-notif-serv {
+    height:48px; 
+    width:100%;
+    display:block;
+    box-sizing:border-box;
+    position:absolute;
+    top:0;
+    left:0;
+    padding:6px;
+    font-size:0;
+}
+.chalk-notif-item .chalk-notif-serv-ico {
+    height:36px;
+    width:36px;
+    display:inline-block;
+    box-sizing:border-box;
+    border-radius:50%;
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background:rgba(0,0,0, 0.2);
+    margin:0 12px 0 0;
+    vertical-align:top;
+}
+.chalk-notif-item .chalk-notif-serv-text {
+    height:36px;
+    width:calc(100% - 48px);
+    display:inline-block;
+    box-sizing:border-box;
+    padding:6px 6px 6px 0;
+    font:normal 16px/24px "Roboto", sans-serif;
+    color:#000000;
+    text-align:left;
+    vertical-align:top;
+}
+.chalk-notif-item .chalk-notif-text {
+    height:144px;
+    width:100%;
+    display:block;
+    box-sizing:border-box;
+    padding:12px 24px;
+    font:normal 14px/18px "Roboto", sans-serif;
+    color:#000000;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.chalk-notif-item .chalk-notif-actions {
+    height:48px; 
+    width:100%;
+    display:block;
+    box-sizing:border-box;
+    position:absolute;
+    bottom:0;
+    left:0;
+    padding:6px;
+    font-size:0;
+    text-align:right;
+}
+.chalk-notif-action-button {
+    height:36px;
+    width:36px;
+    display:inline-block;
+    box-sizing:border-box;
+    padding:6px;
+    margin:0 0 0 6px;
+    text-align:center;
+    font:normal 24px/24px "Material Icons";
+    color:#000000;
+    background-color:transparent;
+    border-radius:50%;
+    cursor:pointer;
+}
+.chalk-notif-action-button:hover {
+    background-color:rgba(0,0,0, 0.1);
+}
+.chalk-notif-action-txtin {
+    height:36px;
+    width:calc(100% - 84px);
+    box-sizing:border-box;
+    border:none;
+    outline:none;
+    padding:6px 18px;
+    margin:0;
+    vertical-align:top;
+    font:normal 14px/24px "Roboto", sans-serif;
+    color:#000000;
+    background-color:rgba(0,0,0, 0.1);
+    border-radius:18px;
+    display:none;
+}

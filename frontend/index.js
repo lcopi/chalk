@@ -63,3 +63,37 @@ _("#cal_rot_frwd").on("click", function () {
     calendar.incrementRotate();
 });
 calendar.PopulateGrid();
+
+var notif = Chalk.Notifications.NewNotification(
+    "Messaging / <b>First Last</b>", 
+    "", 
+    "HJbv nfjkls fnsjk. njknsvf njknkvfs iopq vboq hvuiw jlvns iogwb. Ohwiubvp rijwi iuwbqpv. Nvjnfsjkvf ?", 
+    Chalk.Notifications.TEXT, 
+    Chalk.Notifications.SEND, 
+    Chalk.Notifications.RESPOND,
+    Chalk.Notifications.OPEN, 
+    Chalk.Notifications.IGNORE
+);
+
+var notif2 = Chalk.Notifications.NewNotification(
+    "Service Notification",
+    "",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros sapien, vulputate eget sem non, condimentum pharetra odio. Nulla lobortis.",
+    Chalk.Notifications.YES,
+    Chalk.Notifications.NO
+);
+
+var notif3 = Chalk.Notifications.NewNotification(
+    "Service Notification",
+    "",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros sapien, vulputate eget sem non, condimentum pharetra odio. Nulla lobortis.",
+    Chalk.Notifications.OPEN,
+    Chalk.Notifications.IGNORE
+);
+
+var notif4 = Chalk.Notifications.NewNotification(
+    "Service Notification",
+    "",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros sapien, vulputate eget sem non, condimentum pharetra odio. Nulla lobortis.",
+    Chalk.Notifications.OK
+);

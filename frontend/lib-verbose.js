@@ -293,7 +293,7 @@
                 /* Allow any number of arguments to be used in the order: key, value, key2, value2, ... */
                 for (var i = 0; i < arguments.length - arguments.length % 2; i += 2) {
                     if ((arguments[i] instanceof String || typeof arguments[i] == "string") && (arguments[i + 1] instanceof String || typeof arguments[i + 1] == "string")) {
-                        for (var i = this.length; i--; this[i].style[arguments[i]] = arguments[i + 1]);
+                        for (var j = this.length; j--; this[j].style[arguments[i]] = arguments[i + 1]);
                     }
                 }
             }
@@ -373,11 +373,11 @@
             if (arguments.length == 0) throw "Method on expects an argument";
             else if (arguments.length == 1 && (str instanceof Object || typeof str == "object")) {
                 for (var key in str) {
-                    for (var i = this.length; i--; this[i].addEventListener(key, str[key]));
+                    for (var i = this.length; i--; this[i].addEventListener(key.replace(/^on/,""), str[key]));
                 }
             } else {
                 for (var i = 0; i < arguments.length - arguments.length % 2; i+=2) {
-                    for (var ii = this.length; ii--; this[ii].addEventListener(arguments[i], arguments[i + 1]));
+                    for (var ii = this.length; ii--; this[ii].addEventListener(arguments[i].replace(/^on/,""), arguments[i + 1]));
                 }
             }
 
