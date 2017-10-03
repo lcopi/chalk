@@ -13,11 +13,12 @@ spec:
     spec:
       containers:
       - name: chalk
-        image: lcopi/chalk:v1
+        image: lcopi/chalk
         resources:
           requests:
             cpu: 100m
             memory: 100Mi
+        imagePullPolicy: Always
         env:
         - name: GET_HOSTS_FROM
           value: dns

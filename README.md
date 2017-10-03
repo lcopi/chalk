@@ -19,12 +19,12 @@ Webpage hosted at: http://localhost:8080/
 # Build for Deployment
 After building the docker image (must be signed in)
 ```
-docker tag <hash-of-build> lcopi/chalk:v1
-docker push lcopi/chalk:v1
+docker tag <hash-of-build> lcopi/chalk
+docker push lcopi/chalk
 ```
 To pull image from docker (no sign-in - public repo)
 ```
-docker pull lcopi/chalk:v1
+docker pull lcopi/chalk
 ```
 
 # Hosting information
