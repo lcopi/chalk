@@ -48,21 +48,23 @@ _(".button").on("click", function () {
     }
 });
 
-/*var calendar = new Calendar({
-    "table"    :_("#cal_picker_grid"),
-    "rotdisp"  :_("#cal_picker_rot_disp"),
-    "dispmonth":_("#cal_picker_mnth"),
-    "dispdow"  :_("#cal_picker_dow"),
-    "dispyear" :_("#cal_picker_year"),
-    "dispdate" :_("#cal_picker_day")
+var datepicker = new DatePicker({
+    "table"      :_("#dp_pick table"),
+    "pick_top"   :_("#dp_pick_top .text"),
+    "disp_top"   :_("#dp_disp_top"),
+    "disp_bottom":_("#dp_disp_bottom")
 });
-_("#cal_rot_back").on("click", function () {
-    calendar.decrementRotate();
+_("#dp_pick_dec").on("click", function () {
+    datepicker.decrementRotate();
 });
-_("#cal_rot_frwd").on("click", function () {
-    calendar.incrementRotate();
+_("#dp_pick_inc").on("click", function () {
+    datepicker.incrementRotate();
 });
-calendar.PopulateGrid();*/
+_("#dp_pick_today").on("click", function () {
+    var d = new Date();
+    datepicker.setDate(d.getFullYear(), d.getMonth(), d.getDate());
+});
+datepicker.PopulateGrid();
 
 var notif = Chalk.Notifications.NewNotification(
     "Messaging / <b>First Last</b>", 

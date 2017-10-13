@@ -1,4 +1,4 @@
-var Calendar = function (els) {
+var DatePicker = function (els) {
     if (window === this) return new Calendar();
 
     this.months = [
@@ -35,10 +35,10 @@ var Calendar = function (els) {
     this.setDate(this.current.Year, this.current.Month, this.current.Date);
     return this;
 };
-Calendar.prototype = {
-    constructor: Calendar,
+DatePicker.prototype = {
+    constructor: DatePicker,
     "PopulateGrid": function () {
-        this.elements.table.child("*").remove();
+        this.elements.table.child("td").text("");
         var i, j;
         var offset = this.months[this.current.Month].first(this.current.Year);
         var mlen   = this.months[this.current.Month].len(this.current.Year);
@@ -46,25 +46,18 @@ Calendar.prototype = {
         /*  To increase Performance DocumentFragments should be used,
             however that feature is not supported on all major browsers so
             in the interest of cross-browser stability it is not used  */
-        var current_row = _("<tr>");
-        for (i = 0; i < this.week.length; i++) {
-            current_row.append(_("<th>").text(this.week[i].sabbr));
-        }
-        current_row.appendTo(this.elements.table);
         for (i = 0; i < total_rows; i++) {
-            current_row = _("<tr>");
+            current_row = _(this.elements.table.child("tr")[i + 1]);
             for (j = 0; j < 7; j++) {
-                var cell = _("<td>").css({"height":"calc((100% - 24px) / " + total_rows.toString() + ")"});
+                var cell = _(current_row.child("td")[j]);
                 var dayn = (i * 7) + j + 1 - offset;
                 if (dayn > 0 && dayn <= mlen) {
-                    var btn  = _("<div.cal_picker_g_btn>").text(dayn.toString()).on("click", function (ev) {
+                    var btn  = cell.text(dayn.toString()).on("click", function (ev) {
                         this.setDate(this.current.Year, this.current.Month, Number(ev.target.innerText));
-                    }.bind(this)).appendTo(cell);
-                    if (this.current.Date == dayn) btn.addClass("selec");
+                    }.bind(this)).dropClass("sel");
+                    if (this.current.Date == dayn) cell.addClass("sel");
                 }
-                cell.appendTo(current_row);
             }
-            current_row.appendTo(this.elements.table);
         }
     },
     "setDate": function (year, month, date) {
@@ -75,11 +68,9 @@ Calendar.prototype = {
         this.date.setMonth(month);
         this.date.setDate(date);
         this.PopulateGrid();
-        this.elements["dispdow"].text(this.week[this.date.getDay()].full);
-        this.elements["dispmonth"].text(this.months[month].full);
-        this.elements["dispdate"].text(date.toString());
-        this.elements["dispyear"].text(year.toString());
-        this.elements["rotdisp"].html(this.months[month].full + "&emsp;" + year.toString())
+        this.elements["disp_top"].text(year.toString());
+        this.elements["disp_bottom"].text(this.week[this.date.getDay()].abbr + ", " + this.months[month].abbr + " " + date.toString());
+        this.elements["pick_top"].html(this.months[month].full + " " + year.toString())
     },
     "incrementRotate": function () {
         if (this.current.Month == 11) {
