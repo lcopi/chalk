@@ -4,6 +4,7 @@
     <title>Chalk</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
     <link rel="stylesheet" href="index.css"/>
     <link rel="stylesheet" href="chalk-notif.css"/>
 </head>
@@ -35,7 +36,7 @@
     <div id="accountmenu" class="rightmenu"></div>
     <div id="content">
         <div id="leftcolumn">
-            <div class="cal_picker_row">
+            <!-- <div class="cal_picker_row">
                 <div id="cal_picker_dow">Monday</div>
                 <div id="cal_picker_mnth">September</div>
                 <div id="cal_picker_day">20</div>
@@ -52,7 +53,32 @@
                         <th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
                     </tr>
                 </table>
-            </div>
+            </div> -->
+            <div id="date_picker">
+                    <div id="dp_disp">
+                        <div id="dp_disp_top">2017</div>
+                        <div id="dp_disp_bottom">Thu, Oct 12</div>
+                    </div>
+                    <div id="dp_pick">
+                        <div id="dp_pick_top">
+                            <div class="button mi" style="float:left">chevron_left</div>
+                            <div class="button mi" style="float:right">chevron_right</div>
+                            <div class="text">October 2017</div>
+                        </div>
+                        <table>
+                            <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                            <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+                            <tr><td>8</td><td>9</td><td>10</td><td>11</td><td class="sel">12</td><td>13</td><td>14</td></tr>
+                            <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+                            <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+                            <tr><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        </table>
+                        <div id="dp_pick_bottom">
+                            <div class="button">today</div>
+                        </div>
+                    </div>
+                </div>
         </div>
 		<div id="rightcolumn">
 			<div id="gantt_container">

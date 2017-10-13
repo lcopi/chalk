@@ -48,7 +48,7 @@ _(".button").on("click", function () {
     }
 });
 
-var calendar = new Calendar({
+/*var calendar = new Calendar({
     "table"    :_("#cal_picker_grid"),
     "rotdisp"  :_("#cal_picker_rot_disp"),
     "dispmonth":_("#cal_picker_mnth"),
@@ -62,7 +62,7 @@ _("#cal_rot_back").on("click", function () {
 _("#cal_rot_frwd").on("click", function () {
     calendar.incrementRotate();
 });
-calendar.PopulateGrid();
+calendar.PopulateGrid();*/
 
 var notif = Chalk.Notifications.NewNotification(
     "Messaging / <b>First Last</b>", 
