@@ -56,6 +56,8 @@ DatePicker.prototype = {
                         this.setDate(this.current.Year, this.current.Month, Number(ev.target.innerText));
                     }.bind(this)).dropClass("sel");
                     if (this.current.Date == dayn) cell.addClass("sel");
+                } else {
+                    cell.dropClass("sel");
                 }
             }
         }
