@@ -52,9 +52,13 @@ DatePicker.prototype = {
                 var cell = _(current_row.child("td")[j]);
                 var dayn = (i * 7) + j + 1 - offset;
                 if (dayn > 0 && dayn <= mlen) {
-                    var btn  = cell.text(dayn.toString()).on("click", function (ev) {
-                        this.setDate(this.current.Year, this.current.Month, Number(ev.target.innerText));
-                    }.bind(this)).dropClass("sel");
+                    var btn  = cell.text(dayn.toString()).prop("cal_evt", true).dropClass("sel");
+					if (btn.prop("cal_evt")) {
+						btn.on("click", function (ev) {
+							var day = Number(ev.target.innerText);
+							if (day > 0 && day <= this.months[this.current.Month].len(this.current.Year)) this.setDate(this.current.Year, this.current.Month, day);
+						}.bind(this));
+					}
                     if (this.current.Date == dayn) cell.addClass("sel");
                 } else {
                     cell.dropClass("sel");

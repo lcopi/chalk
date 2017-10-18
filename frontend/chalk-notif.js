@@ -68,16 +68,24 @@ Chalk.Notifications = {
         this.actions.ignore = btn;
     },
     "NewNotification": function (service, ico, text, actions__) {
-        var notif = ChalkNotification(...arguments);
+		// var notif = new ChalkNotification(...arguments);
+		// IE doesn't support the spread operator (...), so fuck IE, we'll use this garbage instead
+		var arr = Array.prototype.slice.call(arguments);
+		arr.unshift(null);
+        var notif = new (Function.prototype.bind.apply(ChalkNotification, arr));
         return notif;
     }
 };
 
-function ChalkNotification (service, ico, text) {
+function ChalkNotification (service, ico, text, actions__) {
     if (window === this) {
-        return new ChalkNotification(...arguments);
+        // return new ChalkNotification(...arguments);
+		// IE continues to shit on the readability of the code
+		var arr = Array.prototype.slice.call(arguments);
+		arr.unshift(null);
+		return new (Function.prototype.bind.apply(ChalkNotification, arr))
     }
-
+	
     this.onreply   = undefined;
     this.onsend    = undefined;
     this.onaffirm  = undefined;
