@@ -385,6 +385,7 @@ body {
     position:absolute;
     top:2px;
     left:2px;
+	bottom:2px;
     display:none;
     transform:scale(0,0);
     transition:transform 0.2s ease;
