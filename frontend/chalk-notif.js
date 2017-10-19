@@ -16,7 +16,7 @@ Chalk.Notifications = {
     "YES": function () {
         let btn = _("<div.chalk-notif-action-button.material-icons>").html("check").css("color","#1B5E20").on("onclick", function () {
             this.onaffirm();
-            this.dismiss();            
+            this.dismiss();
         }.bind(this)).appendTo(this.actions_el).attr("title", "Yes");
         this.actions.yes = btn;
     },
@@ -34,7 +34,7 @@ Chalk.Notifications = {
     "SEND": function () {
         let btn = _("<div.chalk-notif-action-button.material-icons>").html("send").css("display", "none","color","#0D47A1").on("onclick", function () {
             this.onreply(this.actions.txtin.value());
-            this.dismiss();            
+            this.dismiss();
         }.bind(this)).appendTo(this.actions_el).attr("title", "Send");
         this.actions.send = btn;
     },
@@ -55,7 +55,7 @@ Chalk.Notifications = {
     "OPEN": function () {
         let btn = _("<div.chalk-notif-action-button.material-icons>").html("open_in_new").on("onclick", function () {
             this.onopen();
-            this.dismiss();            
+            this.dismiss();
         }.bind(this)).appendTo(this.actions_el).attr("title", "Open");
         this.actions.open = btn;
     },
@@ -68,12 +68,11 @@ Chalk.Notifications = {
         this.actions.ignore = btn;
     },
     "NewNotification": function (service, ico, text, actions__) {
-		// var notif = new ChalkNotification(...arguments);
+		// return new ChalkNotification(...arguments);
 		// IE doesn't support the spread operator (...), so fuck IE, we'll use this garbage instead
 		var arr = Array.prototype.slice.call(arguments);
 		arr.unshift(null);
-        var notif = new (Function.prototype.bind.apply(ChalkNotification, arr));
-        return notif;
+        return new (Function.prototype.bind.apply(ChalkNotification, arr));
     }
 };
 
@@ -85,7 +84,7 @@ function ChalkNotification (service, ico, text, actions__) {
 		arr.unshift(null);
 		return new (Function.prototype.bind.apply(ChalkNotification, arr))
     }
-	
+
     this.onreply   = undefined;
     this.onsend    = undefined;
     this.onaffirm  = undefined;
