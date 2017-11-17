@@ -95,7 +95,7 @@ Color.prototype = {
     },
 
     "getHSLA": function () {},
-    "getRGBA": function () {}
+    "getRGBA": function () {},
 
     "overlay": function () {},
     "combine": function () {},
